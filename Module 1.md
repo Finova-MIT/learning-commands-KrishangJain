@@ -4,7 +4,7 @@
 
 ### Intro To Commands
 
-Solution: I typed "hello" in the terminal and got the flag.
+Solution: Typed "hello" in the terminal and got the flag.
 
 Terminal: 
 ```bash
@@ -17,7 +17,7 @@ pwn.college{gu_nYFIEvzXaRvZiJyCR-pXzLj-.QX3YjM1wiM1IzNxEzW}
 
 ### Intro To Arguments
 
-Solution: I typed "hello hackers" in the terminal and got the flag.
+Solution: Typed "hello hackers" in the terminal and got the flag.
 
 Terminal: 
 ```bash
