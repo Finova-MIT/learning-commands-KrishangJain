@@ -273,19 +273,20 @@ pwn.college{gHie5goXimIszV_2B_wi0bLZyo5.QXyMDO0wiM1IzNxEzW}
 
 ### linking files
 
-Solution: used mkdir to make /tmp/pwn, used touch to make file college inside it.
+Solution: tried /challenge/catflag. created a symbolic link ~/not-the-flag pointing to /flag. tried /challenge/catflag again. this time it works as now /challenge/catflag reads out ~/not-the-flag which points to /flag.
 
 Terminal: 
 ```bash
-hacker@commands~making-directories:~$ mkdir /tmp/pwn
-hacker@commands~making-directories:~$ cd /tmp/pwn
-hacker@commands~making-directories:/tmp/pwn$ touch college
-hacker@commands~making-directories:/tmp/pwn$ /challenge/run
-Success! Here is your flag:
-pwn.college{8_ODzWymYdAuE4UsN-V2oHcGVwI.QXxMDO0wiM1IzNxEzW}
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+cat: /home/hacker/not-the-flag: No such file or directory
+hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{Uo3jMeGk9ShQsfPUiViotUvViWO.QX5ETN1wSO1UzNxEzW}
 ```
 Flag: 
-pwn.college{8_ODzWymYdAuE4UsN-V2oHcGVwI.QXxMDO0wiM1IzNxEzW}
+pwn.college{Uo3jMeGk9ShQsfPUiViotUvViWO.QX5ETN1wSO1UzNxEzW}
 
 
 
