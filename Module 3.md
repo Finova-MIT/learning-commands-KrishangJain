@@ -53,6 +53,19 @@ pwn.college{MdGnXsQN4szq_ZLJ8tRiPx1UNyE.QX3EDO0wiM1IzNxEzW}
 Flag: 
 pwn.college{MdGnXsQN4szq_ZLJ8tRiPx1UNyE.QX3EDO0wiM1IzNxEzW}
 
+### comparing files
+
+Solution: used diff command to search for the 1 different line
+
+Terminal: 
+```bash
+hacker@commands~comparing-files:/challenge$ diff decoys_only.txt decoys_and_real.txt
+49a50
+> pwn.college{wu1uxcd68LX1ReRuFCKPkZ7qQYQ.01MwMDOxwiM1IzNxEzW}
+```
+Flag: 
+pwn.college{wu1uxcd68LX1ReRuFCKPkZ7qQYQ.01MwMDOxwiM1IzNxEzW}
+
 ### listing files
 
 Solution: navigated to /challenge. checked contents with ls. ran the file found using ./24221-renamed-run-6036
@@ -98,6 +111,36 @@ pwn.college{04WbzWSnh6K9bo5vEIDt858q8Cl.QX2kDM1wiM1IzNxEzW}
 ```
 Flag: 
 pwn.college{04WbzWSnh6K9bo5vEIDt858q8Cl.QX2kDM1wiM1IzNxEzW}
+
+### moving files
+
+Solution: used mv command with absolute paths to move flag file to another file in a different directory
+
+Terminal: 
+```bash
+hacker@commands~moving-files:/$ mv /flag /tmp/hack-the-planet
+Correct! Performing 'mv /flag /tmp/hack-the-planet'.
+hacker@commands~moving-files:/$ /challenge/check
+Congrats! You successfully moved the flag to /tmp/hack-the-planet! Here it is:
+pwn.college{MLe0T_IJmYeSa5hpNkPu0xwm4VC.0VOxEzNxwiM1IzNxEzW}
+```
+Flag: 
+pwn.college{MLe0T_IJmYeSa5hpNkPu0xwm4VC.0VOxEzNxwiM1IzNxEzW}
+
+### copying files
+
+Solution: used cp instead of mv to retain the original file
+
+Terminal: 
+```bash
+hacker@commands~copying-files:/$ cp flag tmp/hack-the-planet
+Correct! Performing 'cp flag tmp/hack-the-planet'.
+hacker@commands~copying-files:/$ /challenge/check
+Congrats! You successfully copied the flag to /tmp/hack-the-planet! Here it is:
+pwn.college{0em4quTFfwWKmTp3Dkq_y8Pvh8g.0lNxQTMywiM1IzNxEzW}
+```
+Flag: 
+pwn.college{0em4quTFfwWKmTp3Dkq_y8Pvh8g.0lNxQTMywiM1IzNxEzW}
 
 ### hidden files
 
