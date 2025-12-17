@@ -27,3 +27,14 @@ pwn.college{kjU1QeoIpV8LhsbjLh0tGbOR2cZ.QX4YjM1wiM1IzNxEzW}
 ```
 Flag: 
 pwn.college{kjU1QeoIpV8LhsbjLh0tGbOR2cZ.QX4YjM1wiM1IzNxEzW}
+
+### Command History
+
+Solution: Hit the up arrow to get the flag.
+
+Terminal: 
+```bash
+hacker@hello~command-history:~$ the flag is pwn.college{AkNK7VWZWsg-9glZC4dLdrmDYpL.0lNzEzNxwiM1IzNxEzW}
+```
+Flag: 
+pwn.college{AkNK7VWZWsg-9glZC4dLdrmDYpL.0lNzEzNxwiM1IzNxEzW}
