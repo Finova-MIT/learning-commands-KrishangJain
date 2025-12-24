@@ -70,26 +70,6 @@ pwn.college{kengyDXkPJgDCBZrBhpLQqHCP9N.QX3QTN0wiM1IzNxEzW}
 Flag: 
 pwn.college{kengyDXkPJgDCBZrBhpLQqHCP9N.QX3QTN0wiM1IzNxEzW}
 
-### Position yet elsewhere
-
-Solution: Changed to the directory mentioned and from that directory executed /challenge/run
-
-Terminal: 
-```bash
-hacker@paths~position-yet-elsewhere:~$ /challenge/run
-Incorrect...
-You are not currently in the /tmp directory.
-Please use the `cd` utility to change directory appropriately.
-hacker@paths~position-yet-elsewhere:~$ cd /tmp
-hacker@paths~position-yet-elsewhere:/tmp$ /challenge/run
-Correct!!!
-/challenge/run is an absolute path, invoked from the right directory!
-Here is your flag:
-pwn.college{02QI4UXczoeIq3s3gMjR8bZXWfi.QX4QTN0wiM1IzNxEzW}
-```
-Flag: 
-pwn.college{02QI4UXczoeIq3s3gMjR8bZXWfi.QX4QTN0wiM1IzNxEzW}
-
 ### implicit relative paths, from /
 
 Solution: Changed to the / directory, from there, invoked the challenge/run relative path
