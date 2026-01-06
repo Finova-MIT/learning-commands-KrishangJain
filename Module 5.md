@@ -63,7 +63,7 @@ pwn.college{owNw_4BHuDANpurc3ZXHYS8xkua.QX0IDO0wiM1IzNxEzW}
 
 ### Multiple globs
 
-Solution: changed directory, ran /challenge/run with the only valid argument that captures every word containing the letter p which is ```bash *p*```.
+Solution: changed directory, ran /challenge/run with the only valid argument that captures every word containing the letter p which is ```*p*```.
 
 Terminal: 
 ```bash
