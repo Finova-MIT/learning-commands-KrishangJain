@@ -233,6 +233,30 @@ pwn.college{0bW5uZDwMhTFVOrhkoTTYp141LQ.QX1ATO0wiM1IzNxEzW}
 Flag: 
 pwn.college{0bW5uZDwMhTFVOrhkoTTYp141LQ.QX1ATO0wiM1IzNxEzW}
 
+### Filtering with grep -v
+
+Solution: used -v argument with grep to filter out the word decoy and get the flag
+
+Terminal: 
+```bash
+hacker@piping~filtering-with-grep-v:~$  /challenge/run | grep -v "DECOY"
+pwn.college{kIfRKLFZ5mmXKMZ-CnY_ZEMpLUV.0FOxEzNxwiM1IzNxEzW}
+```
+Flag: 
+pwn.college{kIfRKLFZ5mmXKMZ-CnY_ZEMpLUV.0FOxEzNxwiM1IzNxEzW}
+
+### Filtering with sed
+
+Solution: used the syntax sed "s/oldword/newword/g", kept newword empty as it was mentioned in the description that the FAKEFLAG word appears between characters
+
+Terminal: 
+```bash
+hacker@piping~filtering-with-sed:~$ /challenge/run | sed "s/FAKEFLAG//g"
+pwn.college{o6qZ_TE98A7ouXHH4Ir53wvYwKj.01NxQTMywiM1IzNxEzW}
+```
+Flag: 
+pwn.college{o6qZ_TE98A7ouXHH4Ir53wvYwKj.01NxQTMywiM1IzNxEzW}
+
 ### Duplicating piped data with tee
 
 Solution: used tee output to duplicate the output of /challenge/pwn before it is passed as input to /challenge/college. used cat on it to find the correct argument to be passed for it to work.
@@ -256,6 +280,19 @@ pwn.college{sejmaer_pGtmm3anKfwF9z6TGDH.QXxITO0wiM1IzNxEzW}
 ```
 Flag: 
 pwn.college{sejmaer_pGtmm3anKfwF9z6TGDH.QXxITO0wiM1IzNxEzW}
+
+### Process substitution for input
+
+Solution: used diff with process subsitution for both of its inputs, put the output of the commands as input to diff.
+
+Terminal: 
+```bash
+hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)
+0a1
+> pwn.college{QulSfx2_X_MLJzqaLMkbkxK1xP9.0lNwMDOxwiM1IzNxEzW}
+```
+Flag: 
+pwn.college{QulSfx2_X_MLJzqaLMkbkxK1xP9.0lNwMDOxwiM1IzNxEzW}
 
 ### Writing to multiple programs
 
@@ -287,3 +324,24 @@ pwn.college{E62mLYPf2NWTl334wnOT_kXw3jZ.QXxQDM2wiM1IzNxEzW}
 ```
 Flag: 
 pwn.college{E62mLYPf2NWTl334wnOT_kXw3jZ.QXxQDM2wiM1IzNxEzW}
+
+### Named pipes
+
+Solution: redirected stdout of /challenge/run to the fifo, which resulted in a block. used another terminal window to clear the block and get the flag
+
+Terminal: 
+```bash
+hacker@piping~named-pipes:~$ /challenge/run > /tmp/flag_fifo
+You're successfully redirecting /challenge/run to a FIFO at /tmp/flag_fifo!
+Bash will now try to open the FIFO for writing, to pass it as the stdout of
+/challenge/run. Recall that operations on FIFOs will *block* until both the
+read side and the write side is open, so /challenge/run will not actually be
+launched until you start reading from the FIFO!
+(switching to a different terminal instance)
+hacker@piping~named-pipes:~$ cat /tmp/flag_fifo
+You've correctly redirected /challenge/run's stdout to a FIFO at 
+/tmp/flag_fifo! Here is your flag:
+pwn.college{gRITsv2b1a9f3ZNJQHmSBdnklFN.01MzMDOxwiM1IzNxEzW}
+```
+Flag: 
+pwn.college{gRITsv2b1a9f3ZNJQHmSBdnklFN.01MzMDOxwiM1IzNxEzW}
